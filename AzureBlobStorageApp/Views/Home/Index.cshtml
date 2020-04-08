@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <a href="@Url.Action("Get", "Home")" style="color:green; font-size:14pt;">View Data</a>
+    </div>
+    <div>
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <fieldset>
+                <legend>Upload File</legend>
+                <ol>
+                    <li>
+                        <label style="margin-right:15px;">Select file </label>
+                        <input type="file" name="FilePath" value="" />
+                    </li>
+                </ol>
+                <input type="submit" value="Submit" />
+            </fieldset>
+        }
+    </div>
+</body>
+</html>
